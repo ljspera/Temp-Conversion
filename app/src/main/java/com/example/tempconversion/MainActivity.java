@@ -16,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
     EditText textEdit2;
     Button CtoFbutton;
     Button FtoCbutton;
+    Button buttonK;
     TextView Display1;
     TextView Display2;
+    TextView displayK;
     ConstraintLayout layout;
 
 
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         textEdit2 = findViewById(R.id.textEdit2);
         CtoFbutton = findViewById(R.id.CtoFbutton);
         FtoCbutton = findViewById(R.id.FtoCbutton);
+        buttonK = findViewById(R.id.buttonK);
         Display1 = findViewById(R.id.Display1);
         Display2 = findViewById(R.id.Display2);
+        displayK = findViewById(R.id.displayK);
 
         CtoFbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
                 double x = Double.parseDouble(s);
                 double result = ((x*(9.0/5.0))+32.0);
                 Display2.setText(""+ result);
+            }
+        });
+
+        buttonK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s = textEdit2.getText().toString();
+                double k = Double.parseDouble(s);
+                double result_k = (k+273);
+                displayK.setText(""+ result_k);
             }
         });
 
